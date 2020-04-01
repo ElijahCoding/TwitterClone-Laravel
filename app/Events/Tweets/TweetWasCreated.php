@@ -15,7 +15,7 @@ class TweetWasCreated implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $tweet;
+    protected $tweet;
 
     /**
      * Create a new event instance.
@@ -27,6 +27,11 @@ class TweetWasCreated implements ShouldBroadcast
         $this->tweet = $tweet;
     }
 
+    public function broadcastAs()
+    {
+        return 'TweetWasCreated';
+    }
+
     /**
      * Get the channels the event should broadcast on.
      *
@@ -34,6 +39,8 @@ class TweetWasCreated implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-name');
+        return $this->tweet->user->followers->map(function ($user) {
+            return new PrivateChannel('timeline.' . $user->id);
+        })->toArray();
     }
 }
