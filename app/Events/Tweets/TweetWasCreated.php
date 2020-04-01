@@ -2,6 +2,7 @@
 
 namespace App\Events\Tweets;
 
+use App\Http\Resources\TweetResource;
 use App\Tweet;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
@@ -32,11 +33,11 @@ class TweetWasCreated implements ShouldBroadcast
         return 'TweetWasCreated';
     }
 
-    /**
-     * Get the channels the event should broadcast on.
-     *
-     * @return \Illuminate\Broadcasting\Channel|array
-     */
+    public function broadcastWith()
+    {
+        return (new TweetResource($this->tweet))->jsonSerialize();
+    }
+
     public function broadcastOn()
     {
         return $this->tweet->user->followers->map(function ($user) {
