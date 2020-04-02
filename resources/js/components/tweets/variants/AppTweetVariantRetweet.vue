@@ -1,9 +1,10 @@
 <template>
-    <div class="w-full inline-block p-4 border-b border-gray-800 hover:bg-gray-800">
-        <component
-            :is="`app-tweet-variant-${tweet.type}`"
-            :tweet="tweet"
-        />
+    <div>
+        <div class="text-gray-600 font-medium text-xs flex items-center">
+            <span>{{ tweet.user.name }} retweeted</span>
+        </div>
+
+        <component />
     </div>
 </template>
 
