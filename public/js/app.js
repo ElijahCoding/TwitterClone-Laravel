@@ -2013,6 +2013,12 @@ __webpack_require__.r(__webpack_exports__);
     value: {
       required: false
     }
+  },
+  methods: {
+    resize: function resize(e) {
+      e.target.style.height = 'auto';
+      e.target.style.height = "".concat(e.target.scrollHeight, "px");
+    }
   }
 });
 
@@ -48375,7 +48381,8 @@ var render = function() {
     domProps: { value: _vm.value },
     on: {
       input: function($event) {
-        return _vm.$emit("input", $event.target.value)
+        _vm.$emit("input", $event.target.value)
+        _vm.resize($event)
       }
     }
   })
