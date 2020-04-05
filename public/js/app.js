@@ -2265,31 +2265,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     tweet: {
@@ -48542,6 +48517,123 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/tweets/actions/AppTweetActionGroup.vue?vue&type=template&id=e8930e36&":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/tweets/actions/AppTweetActionGroup.vue?vue&type=template&id=e8930e36& ***!
+  \*************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("ul", { staticClass: "flex mt-4" }, [
+    _c("li", { staticClass: "w-3/12" }, [
+      _c(
+        "a",
+        { staticClass: "flex items-center text-base", attrs: { href: "#" } },
+        [
+          _c(
+            "svg",
+            {
+              staticClass: "fill-current text-gray-600 w-5 mr-2",
+              attrs: {
+                xmlns: "http://www.w3.org/2000/svg",
+                viewBox: "0 0 24 24",
+                width: "24",
+                height: "24"
+              }
+            },
+            [
+              _c("path", {
+                attrs: {
+                  d:
+                    "M2 15V5c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v15a1 1 0 0 1-1.7.7L16.58 17H4a2 2 0 0 1-2-2zM20 5H4v10h13a1 1 0 0 1 .7.3l2.3 2.29V5z"
+                }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c("span", { staticClass: "text-gray-600" }, [_vm._v("0")])
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _c("li", { staticClass: "w-3/12" }, [
+      _c(
+        "a",
+        { staticClass: "flex items-center text-base", attrs: { href: "#" } },
+        [
+          _c(
+            "svg",
+            {
+              staticClass: "fill-current text-gray-600 w-5 mr-2",
+              attrs: {
+                xmlns: "http://www.w3.org/2000/svg",
+                viewBox: "0 0 24 24",
+                width: "24",
+                height: "24"
+              }
+            },
+            [
+              _c("path", {
+                attrs: {
+                  d:
+                    "M5.41 16H18a2 2 0 0 0 2-2 1 1 0 0 1 2 0 4 4 0 0 1-4 4H5.41l2.3 2.3a1 1 0 0 1-1.42 1.4l-4-4a1 1 0 0 1 0-1.4l4-4a1 1 0 1 1 1.42 1.4L5.4 16zM6 8a2 2 0 0 0-2 2 1 1 0 0 1-2 0 4 4 0 0 1 4-4h12.59l-2.3-2.3a1 1 0 1 1 1.42-1.4l4 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 0 1-1.42-1.4L18.6 8H6z"
+                }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c("span", { staticClass: "text-gray-600" }, [_vm._v("0")])
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _c("li", { staticClass: "w-3/12" }, [
+      _c(
+        "a",
+        { staticClass: "flex items-center text-base", attrs: { href: "#" } },
+        [
+          _c(
+            "svg",
+            {
+              staticClass: "fill-current text-gray-600 w-5 mr-2",
+              attrs: {
+                xmlns: "http://www.w3.org/2000/svg",
+                viewBox: "0 0 24 24",
+                width: "24",
+                height: "24"
+              }
+            },
+            [
+              _c("path", {
+                attrs: {
+                  d:
+                    "M12.76 3.76a6 6 0 0 1 8.48 8.48l-8.53 8.54a1 1 0 0 1-1.42 0l-8.53-8.54a6 6 0 0 1 8.48-8.48l.76.75.76-.75zm7.07 7.07a4 4 0 1 0-5.66-5.66l-1.46 1.47a1 1 0 0 1-1.42 0L9.83 5.17a4 4 0 1 0-5.66 5.66L12 18.66l7.83-7.83z"
+                }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c("span", { staticClass: "text-gray-600" }, [_vm._v("0")])
+        ]
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/tweets/variants/AppTweetVariantQuote.vue?vue&type=template&id=ce79e5f4&":
 /*!***************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/tweets/variants/AppTweetVariantQuote.vue?vue&type=template&id=ce79e5f4& ***!
@@ -48686,109 +48778,7 @@ var render = function() {
           _vm._v("\n            " + _vm._s(_vm.tweet.body) + "\n        ")
         ]),
         _vm._v(" "),
-        _c("ul", { staticClass: "flex mt-4" }, [
-          _c("li", { staticClass: "w-3/12" }, [
-            _c(
-              "a",
-              {
-                staticClass: "flex items-center text-base",
-                attrs: { href: "#" }
-              },
-              [
-                _c(
-                  "svg",
-                  {
-                    staticClass: "fill-current text-gray-600 w-5 mr-2",
-                    attrs: {
-                      xmlns: "http://www.w3.org/2000/svg",
-                      viewBox: "0 0 24 24",
-                      width: "24",
-                      height: "24"
-                    }
-                  },
-                  [
-                    _c("path", {
-                      attrs: {
-                        d:
-                          "M2 15V5c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v15a1 1 0 0 1-1.7.7L16.58 17H4a2 2 0 0 1-2-2zM20 5H4v10h13a1 1 0 0 1 .7.3l2.3 2.29V5z"
-                      }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("span", { staticClass: "text-gray-600" }, [_vm._v("0")])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "w-3/12" }, [
-            _c(
-              "a",
-              {
-                staticClass: "flex items-center text-base",
-                attrs: { href: "#" }
-              },
-              [
-                _c(
-                  "svg",
-                  {
-                    staticClass: "fill-current text-gray-600 w-5 mr-2",
-                    attrs: {
-                      xmlns: "http://www.w3.org/2000/svg",
-                      viewBox: "0 0 24 24",
-                      width: "24",
-                      height: "24"
-                    }
-                  },
-                  [
-                    _c("path", {
-                      attrs: {
-                        d:
-                          "M5.41 16H18a2 2 0 0 0 2-2 1 1 0 0 1 2 0 4 4 0 0 1-4 4H5.41l2.3 2.3a1 1 0 0 1-1.42 1.4l-4-4a1 1 0 0 1 0-1.4l4-4a1 1 0 1 1 1.42 1.4L5.4 16zM6 8a2 2 0 0 0-2 2 1 1 0 0 1-2 0 4 4 0 0 1 4-4h12.59l-2.3-2.3a1 1 0 1 1 1.42-1.4l4 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 0 1-1.42-1.4L18.6 8H6z"
-                      }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("span", { staticClass: "text-gray-600" }, [_vm._v("0")])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "w-3/12" }, [
-            _c(
-              "a",
-              {
-                staticClass: "flex items-center text-base",
-                attrs: { href: "#" }
-              },
-              [
-                _c(
-                  "svg",
-                  {
-                    staticClass: "fill-current text-gray-600 w-5 mr-2",
-                    attrs: {
-                      xmlns: "http://www.w3.org/2000/svg",
-                      viewBox: "0 0 24 24",
-                      width: "24",
-                      height: "24"
-                    }
-                  },
-                  [
-                    _c("path", {
-                      attrs: {
-                        d:
-                          "M12.76 3.76a6 6 0 0 1 8.48 8.48l-8.53 8.54a1 1 0 0 1-1.42 0l-8.53-8.54a6 6 0 0 1 8.48-8.48l.76.75.76-.75zm7.07 7.07a4 4 0 1 0-5.66-5.66l-1.46 1.47a1 1 0 0 1-1.42 0L9.83 5.17a4 4 0 1 0-5.66 5.66L12 18.66l7.83-7.83z"
-                      }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("span", { staticClass: "text-gray-600" }, [_vm._v("0")])
-              ]
-            )
-          ])
-        ])
+        _c("app-tweet-action-group")
       ],
       1
     )
@@ -62361,6 +62351,7 @@ var map = {
 	"./components/timeline/AppTimeline.vue": "./resources/js/components/timeline/AppTimeline.vue",
 	"./components/tweets/AppTweet.vue": "./resources/js/components/tweets/AppTweet.vue",
 	"./components/tweets/AppTweetUsername.vue": "./resources/js/components/tweets/AppTweetUsername.vue",
+	"./components/tweets/actions/AppTweetActionGroup.vue": "./resources/js/components/tweets/actions/AppTweetActionGroup.vue",
 	"./components/tweets/variants/AppTweetVariantQuote.vue": "./resources/js/components/tweets/variants/AppTweetVariantQuote.vue",
 	"./components/tweets/variants/AppTweetVariantRetweet.vue": "./resources/js/components/tweets/variants/AppTweetVariantRetweet.vue",
 	"./components/tweets/variants/AppTweetVariantTweet.vue": "./resources/js/components/tweets/variants/AppTweetVariantTweet.vue"
@@ -62830,6 +62821,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppTweetUsername_vue_vue_type_template_id_554d3b90___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppTweetUsername_vue_vue_type_template_id_554d3b90___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/tweets/actions/AppTweetActionGroup.vue":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/tweets/actions/AppTweetActionGroup.vue ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AppTweetActionGroup_vue_vue_type_template_id_e8930e36___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AppTweetActionGroup.vue?vue&type=template&id=e8930e36& */ "./resources/js/components/tweets/actions/AppTweetActionGroup.vue?vue&type=template&id=e8930e36&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _AppTweetActionGroup_vue_vue_type_template_id_e8930e36___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AppTweetActionGroup_vue_vue_type_template_id_e8930e36___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/tweets/actions/AppTweetActionGroup.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/tweets/actions/AppTweetActionGroup.vue?vue&type=template&id=e8930e36&":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/components/tweets/actions/AppTweetActionGroup.vue?vue&type=template&id=e8930e36& ***!
+  \*******************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppTweetActionGroup_vue_vue_type_template_id_e8930e36___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./AppTweetActionGroup.vue?vue&type=template&id=e8930e36& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/tweets/actions/AppTweetActionGroup.vue?vue&type=template&id=e8930e36&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppTweetActionGroup_vue_vue_type_template_id_e8930e36___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppTweetActionGroup_vue_vue_type_template_id_e8930e36___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
