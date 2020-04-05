@@ -23,6 +23,23 @@ class TweetCollection extends ResourceCollection
 
     public function with($request)
     {
-        
+        return [
+            'meta' => [
+                'likes' => $this->likes($request)
+            ]
+        ];
+    }
+
+    protected function likes($request)
+    {
+        if (!$user = $request->user()) {
+            return [];
+        }
+
+        return $user->likes()
+                ->whereIn('tweet_id', $this->collection->pluck('id'))
+                ->pluck('tweet_id')
+                ->toArray()
+                ;
     }
 }
