@@ -20,4 +20,9 @@ class TweetCollection extends ResourceCollection
             'data' => $this->collection
         ];
     }
+
+    public function with($request)
+    {
+        
+    }
 }
