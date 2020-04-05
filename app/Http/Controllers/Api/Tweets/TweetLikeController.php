@@ -10,6 +10,9 @@ class TweetLikeController extends Controller
 {
     public function store(Tweet $tweet, Request $request)
     {
+        if ($request->user()->hasLiked($tweet)) {
+            return response(null, 409);
+        }
         $request->user()->likes()->create([
             'tweet_id' => $tweet->id
         ]);
