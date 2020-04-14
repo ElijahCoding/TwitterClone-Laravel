@@ -87,6 +87,6 @@ class User extends Authenticatable
 
     public function hasLiked(Tweet $tweet)
     {
-        return $this->likes->contains($tweet);
+        return $this->likes->contains('tweet_id', $tweet->id);
     }
 }
