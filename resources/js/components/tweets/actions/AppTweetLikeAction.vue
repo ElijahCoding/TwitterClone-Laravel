@@ -53,7 +53,7 @@
             likeOrUnlike () {
                 if (this.liked) {
                     this.unlikeTweet(this.tweet)
-                    retuurn
+                    return
                 }
 
                 this.likeTweet(this.tweet)
