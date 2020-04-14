@@ -62676,15 +62676,12 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_0__["default"].Store({
     likes: _store_likes__WEBPACK_IMPORTED_MODULE_3__["default"]
   }
 });
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
 var app = new Vue({
   el: '#app',
   store: store
+});
+Echo.channel('tweets').listen('.TweetLikesWereUpdated', function (e) {
+  store.commit('timeline/SET_LIKES', e);
 });
 
 /***/ }),
@@ -63708,17 +63705,28 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           return t.id;
         }).includes(tweet.id);
       })));
+    },
+    SET_LIKES: function SET_LIKES(state, _ref) {
+      var id = _ref.id,
+          count = _ref.count;
+      state.tweets = state.tweets.map(function (t) {
+        if (t.id === id) {
+          t.likes_count = count;
+        }
+
+        return t;
+      });
     }
   },
   actions: {
-    getTweets: function getTweets(_ref, url) {
+    getTweets: function getTweets(_ref2, url) {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         var commit, response;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                commit = _ref.commit;
+                commit = _ref2.commit;
                 _context.next = 3;
                 return axios.get(url);
 
