@@ -57,3 +57,6 @@ Echo.channel('tweets')
             count: e.count
         })
     })
+    .listen('.TweetWasDeleted', (e) => {
+        store.commit('timeline/POP_TWEET', e.id)
+    })
