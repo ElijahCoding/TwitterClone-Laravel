@@ -51,7 +51,7 @@ class TweetCollection extends ResourceCollection
         }
 
         return $user->retweets()
-            ->whereIn('original_tweet_id', $this->collection->pluck('id')->merge($this->collects->pluck('original_tweet_id')))
+            ->whereIn('original_tweet_id', $this->collection->pluck('id')->merge($this->collection->pluck('original_tweet_id')))
             ->pluck('original_tweet_id')
             ->toArray()
             ;
