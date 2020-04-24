@@ -19,7 +19,7 @@ class TweetRetweetController extends Controller
         ]);
 
         broadcast(new TweetWasCreated($retweet));
-        broadcast(new TweetRetweetsWereUpdated($request->user(), $retweet));
+        broadcast(new TweetRetweetsWereUpdated($request->user(), $tweet));
     }
 
     public function destroy(Tweet $tweet, Request $request)
