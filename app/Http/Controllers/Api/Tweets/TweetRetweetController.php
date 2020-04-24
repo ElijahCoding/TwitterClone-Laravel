@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Api\Tweets;
 
+use App\Events\Tweets\TweetRetweetsWereUpdated;
+use App\Events\Tweets\TweetWasCreated;
 use App\Http\Controllers\Controller;
 use App\Tweet;
 use App\Tweets\TweetType;
@@ -15,6 +17,9 @@ class TweetRetweetController extends Controller
            'type' => TweetType::RETWEET,
             'original_tweet_id' => $tweet->id
         ]);
+
+        broadcast(new TweetWasCreated($retweet));
+        broadcast(new TweetRetweetsWereUpdated($request->user(), $retweet));
     }
 
     public function destroy(Tweet $tweet, Request $request)

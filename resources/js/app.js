@@ -47,3 +47,6 @@ Echo.channel('tweets')
             count: e.count
         })
     })
+    .listen('.TweetRetweetsWereUpdated', (e) => {
+
+    })
