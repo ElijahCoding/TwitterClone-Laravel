@@ -13,7 +13,10 @@
                     actions
                 </div>
 
-                <div>
+                <div class="flex items-center justify-end">
+                    <div>
+                        <app-tweet-compose-limit />
+                    </div>
                     <button type="submit" class="bg-blue-500 rounded-full text-gray-300 text-center px-4 py-3 font-bold leading-none">
                         Tweet
                     </button>
