@@ -15,6 +15,11 @@
                 v-if="media.images.length"
             />
 
+            <app-tweet-video-preview
+                :video="media.video"
+                v-if="media.video"
+            />
+
             <div class="flex justify-between">
                 <ul class="flex items-center">
                     <li class="mr-4">
