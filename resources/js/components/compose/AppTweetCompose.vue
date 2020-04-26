@@ -8,6 +8,8 @@
                 v-model="form.body"
             />
 
+            <span class="text-gray-6000">{{ media }}</span>
+
             <div class="flex justify-between">
                 <ul class="flex items-center">
                     <li class="mr-4">
