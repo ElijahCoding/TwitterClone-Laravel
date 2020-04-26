@@ -13,6 +13,7 @@
                     <li class="mr-4">
                         <app-tweet-compose-media-button
                             id="media-compose"
+                            @selected="handleMediaSelected"
                         />
                     </li>
                 </ul>
@@ -38,7 +39,13 @@
         data () {
             return {
                 form: {
-                    body: ''
+                    body: '',
+                    media: []
+                },
+
+                media: {
+                    images: [],
+                    video: null
                 }
             }
         },
@@ -48,6 +55,10 @@
                 await axios.post('/api/tweets', this.form)
 
                 this.form.body = ''
+            },
+
+            handleMediaSelected (files) {
+                console.log(files)
             }
         },
     }

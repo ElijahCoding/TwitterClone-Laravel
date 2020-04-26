@@ -1963,6 +1963,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1993,6 +1994,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
+    },
+    handleMediaSelected: function handleMediaSelected(files) {
+      console.log(files);
     }
   }
 });
@@ -2116,6 +2120,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -48854,9 +48864,11 @@ var render = function() {
             _c("ul", { staticClass: "flex items-center" }, [
               _c(
                 "li",
+                { staticClass: "mr-4" },
                 [
                   _c("app-tweet-compose-media-button", {
-                    attrs: { id: "media-compose" }
+                    attrs: { id: "media-compose" },
+                    on: { selected: _vm.handleMediaSelected }
                   })
                 ],
                 1
@@ -49012,7 +49024,12 @@ var render = function() {
   return _c("div", [
     _c("input", {
       staticClass: "hidden",
-      attrs: { type: "file", id: _vm.id, multiple: "" }
+      attrs: { type: "file", id: _vm.id, multiple: "" },
+      on: {
+        change: function($event) {
+          return _vm.$emit("selected", $event.target.files)
+        }
+      }
     }),
     _vm._v(" "),
     _c("label", { staticClass: "cursor-pointer", attrs: { for: _vm.id } }, [
