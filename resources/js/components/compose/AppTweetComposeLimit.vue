@@ -16,9 +16,13 @@
                 fill="none"
                 stroke-width="8"
                 :r="radius"
-                class="stroke-current text-blue-500"
+                class="stroke-current"
                 :stroke-dasharray="dash"
                 :stroke-dashoffset="offset"
+                :class="{
+                    'text-red-500': percentageIsOver,
+                    'text-blue-500': !percentageIsOver
+                }"
             />
         </svg>
     </div>
@@ -32,14 +36,33 @@
             }
         },
 
+        props: {
+          body: {
+              required: true,
+              type: String
+          }
+        },
+
         computed: {
             dash () {
                 return 2 * Math.PI * this.radius
             },
 
+            percentageIsOver () {
+                return this.percentage > 100
+            },
+
+            percentage () {
+              return Math.round((this.body.length * 100) / 280)
+            },
+
+            displayPercentage () {
+                return this.percentage <= 100 ? this.percentage : 100
+            },
+
             offset () {
                 let circ = this.dash
-                let progress = 25 / 100
+                let progress = this.displayPercentage / 100
 
                 return circ * (1 - progress)
             }

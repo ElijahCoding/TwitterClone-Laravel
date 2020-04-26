@@ -1956,6 +1956,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2027,19 +2030,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       radius: 30
     };
   },
+  props: {
+    body: {
+      required: true,
+      type: String
+    }
+  },
   computed: {
     dash: function dash() {
       return 2 * Math.PI * this.radius;
     },
+    percentageIsOver: function percentageIsOver() {
+      return this.percentage > 100;
+    },
+    percentage: function percentage() {
+      return Math.round(this.body.length * 100 / 280);
+    },
+    displayPercentage: function displayPercentage() {
+      return this.percentage <= 100 ? this.percentage : 100;
+    },
     offset: function offset() {
       var circ = this.dash;
-      var progress = 25 / 100;
+      var progress = this.displayPercentage / 100;
       return circ * (1 - progress);
     }
   }
@@ -48799,7 +48821,16 @@ var render = function() {
             _c("div", [_vm._v("\n                actions\n            ")]),
             _vm._v(" "),
             _c("div", { staticClass: "flex items-center justify-end" }, [
-              _c("div", [_c("app-tweet-compose-limit")], 1),
+              _c(
+                "div",
+                [
+                  _c("app-tweet-compose-limit", {
+                    staticClass: "mr-2",
+                    attrs: { body: _vm.form.body }
+                  })
+                ],
+                1
+              ),
               _vm._v(" "),
               _c(
                 "button",
@@ -48860,7 +48891,11 @@ var render = function() {
         }),
         _vm._v(" "),
         _c("circle", {
-          staticClass: "stroke-current text-blue-500",
+          staticClass: "stroke-current",
+          class: {
+            "text-red-500": _vm.percentageIsOver,
+            "text-blue-500": !_vm.percentageIsOver
+          },
           attrs: {
             cx: "60",
             cy: "60",
