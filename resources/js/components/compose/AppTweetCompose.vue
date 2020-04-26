@@ -10,6 +10,11 @@
 
             <span class="text-gray-6000">{{ media }}</span>
 
+            <app-tweet-image-preview
+                :images="media.images"
+                v-if="media.images.length"
+            />
+
             <div class="flex justify-between">
                 <ul class="flex items-center">
                     <li class="mr-4">
@@ -37,7 +42,9 @@
 </template>
 
 <script>
+    import AppTweetImagePreview from "./media/AppTweetImagePreview";
     export default {
+        components: {AppTweetImagePreview},
         data () {
             return {
                 form: {
