@@ -9,9 +9,13 @@
             />
 
             <div class="flex justify-between">
-                <div>
-                    actions
-                </div>
+                <ul class="flex items-center">
+                    <li class="mr-4">
+                        <app-tweet-compose-media-button
+                            id="media-compose"
+                        />
+                    </li>
+                </ul>
 
                 <div class="flex items-center justify-end">
                     <div>
