@@ -1975,8 +1975,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2058,6 +2056,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       if (this.media.video) {
         this.media.images = [];
       }
+    },
+    removeVideo: function removeVideo() {
+      this.media.video = null;
+    },
+    removeImage: function removeImage(image) {
+      this.media.images = this.media.images.filter(function (i) {
+        return image !== i;
+      });
     }
   },
   mounted: function mounted() {
@@ -2232,6 +2238,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     images: {
@@ -2257,6 +2271,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -48976,12 +48998,10 @@ var render = function() {
       }
     },
     [
-      _c("div", { staticClass: "mr-3" }, [
-        _c("img", {
-          staticClass: "w-12 rounded-full",
-          attrs: { src: _vm.$user.avatar }
-        })
-      ]),
+      _c("img", {
+        staticClass: "w-12 h-12 rounded-full mr-3",
+        attrs: { src: _vm.$user.avatar }
+      }),
       _vm._v(" "),
       _c(
         "div",
@@ -48997,19 +49017,17 @@ var render = function() {
             }
           }),
           _vm._v(" "),
-          _c("span", { staticClass: "text-gray-6000" }, [
-            _vm._v(_vm._s(_vm.media))
-          ]),
-          _vm._v(" "),
           _vm.media.images.length
             ? _c("app-tweet-image-preview", {
-                attrs: { images: _vm.media.images }
+                attrs: { images: _vm.media.images },
+                on: { removed: _vm.removeImage }
               })
             : _vm._e(),
           _vm._v(" "),
           _vm.media.video
             ? _c("app-tweet-video-preview", {
-                attrs: { video: _vm.media.video }
+                attrs: { video: _vm.media.video },
+                on: { removed: _vm.removeVideo }
               })
             : _vm._e(),
           _vm._v(" "),
@@ -49243,7 +49261,45 @@ var render = function() {
           _c("img", {
             staticClass: "rounded-lg",
             attrs: { src: _vm.generateImagePreview(image) }
-          })
+          }),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass:
+                "bg-gray-900 w-8 h-8 rounded-full absolute top-0 right-0 mr-3 mt-3 flex items-center justify-center",
+              attrs: { href: "#" },
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.$emit("removed", image)
+                }
+              }
+            },
+            [
+              _c(
+                "svg",
+                {
+                  staticClass: "fill-current text-gray-300",
+                  attrs: {
+                    xmlns: "http://www.w3.org/2000/svg",
+                    viewBox: "0 0 24 24",
+                    width: "24",
+                    height: "24"
+                  }
+                },
+                [
+                  _c("path", {
+                    staticClass: "heroicon-ui",
+                    attrs: {
+                      d:
+                        "M16.24 14.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 0 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12l2.83 2.83z"
+                    }
+                  })
+                ]
+              )
+            ]
+          )
         ]
       )
     }),
@@ -49272,7 +49328,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "mb-4" }, [
+  return _c("div", { staticClass: "mb-4 relative" }, [
     _c("video", {
       staticClass: "rounded-lg",
       attrs: {
@@ -49280,7 +49336,45 @@ var render = function() {
         preload: "",
         src: _vm.generateVideoPreview(_vm.video)
       }
-    })
+    }),
+    _vm._v(" "),
+    _c(
+      "a",
+      {
+        staticClass:
+          "bg-gray-900 w-8 h-8 rounded-full absolute top-0 right-0 mr-3 mt-3 flex items-center justify-center",
+        attrs: { href: "#" },
+        on: {
+          click: function($event) {
+            $event.preventDefault()
+            return _vm.$emit("removed", _vm.video)
+          }
+        }
+      },
+      [
+        _c(
+          "svg",
+          {
+            staticClass: "fill-current text-gray-300",
+            attrs: {
+              xmlns: "http://www.w3.org/2000/svg",
+              viewBox: "0 0 24 24",
+              width: "24",
+              height: "24"
+            }
+          },
+          [
+            _c("path", {
+              staticClass: "heroicon-ui",
+              attrs: {
+                d:
+                  "M16.24 14.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 0 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12l2.83 2.83z"
+              }
+            })
+          ]
+        )
+      ]
+    )
   ])
 }
 var staticRenderFns = []
