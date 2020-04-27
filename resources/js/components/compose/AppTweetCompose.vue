@@ -91,6 +91,7 @@
                 }
             },
 
+
             removeVideo () {
                 this.media.video = null
             },
