@@ -6,7 +6,7 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class MediaCollection extends ResourceCollection
 {
-    protected $collects = MediaResource::class;
+    public $collects = MediaResource::class;
 
     /**
      * Transform the resource collection into an array.
@@ -17,7 +17,7 @@ class MediaCollection extends ResourceCollection
     public function toArray($request)
     {
         return [
-            'data' => $this->data
+            'data' => $this->collection
         ];
     }
 }

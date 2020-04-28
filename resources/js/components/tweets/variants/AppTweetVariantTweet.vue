@@ -9,6 +9,16 @@
                 {{ tweet.body }}
             </p>
 
+            <div class="flex flex-wrap mb-4 mt-4" v-if="images.length">
+                <div
+                    class="w-6/12 flex-grow"
+                    v-for="(image, index) in images"
+                    :key="index"
+                >
+                    <img :src="image.url" class="rounded-lg">
+                </div>
+            </div>
+
             <app-tweet-action-group
                 :tweet="tweet"
             />
@@ -22,6 +32,12 @@
             tweet: {
                 required: true,
                 type: Object
+            }
+        },
+
+        computed: {
+            images () {
+                return this.tweet.media.data.filter(m => m.type === 'image')
             }
         }
     }
