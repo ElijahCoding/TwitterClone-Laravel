@@ -6,7 +6,7 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class TweetMediaCollection extends ResourceCollection
 {
-    public $collects = TweetMediaCollection::class;
+    public $collects = TweetMediaResource::class;
 
     /**
      * Transform the resource collection into an array.

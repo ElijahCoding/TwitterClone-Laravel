@@ -6,13 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Media\MediaStoreRequest;
 use App\Http\Resources\TweetMediaCollection;
 use App\TweetMedia;
-use Illuminate\Http\Request;
 
 class MediaController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth:airlock']);
+        $this->middleware(['auth:sanctum']);
     }
 
     public function store(MediaStoreRequest $request)
@@ -31,5 +30,7 @@ class MediaController extends Controller
         $tweetMedia->baseMedia()
             ->associate($tweetMedia->addMedia($media)->toMediaCollection())
             ->save();
+
+        return $tweetMedia;
     }
 }
