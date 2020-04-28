@@ -30,5 +30,7 @@ class MediaController extends Controller
         $tweetMedia->baseMedia()
             ->associate($tweetMedia->addMedia($media)->toMediaCollection())
             ->save();
+
+        return $tweetMedia;
     }
 }

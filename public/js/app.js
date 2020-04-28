@@ -1998,6 +1998,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var media;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -2006,10 +2007,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _this.uploadMedia();
 
               case 2:
-                // await axios.post('/api/tweets', this.form)
-                _this.form.body = '';
+                media = _context.sent;
+                _this.form.media = media.data.data.map(function (r) {
+                  return r.id;
+                });
+                _context.next = 6;
+                return axios.post('/api/tweets', _this.form);
 
-              case 3:
+              case 6:
+                _this.form.body = '';
+                _this.form.media = [];
+                _this.form.video = null;
+                _this.media.images = [];
+
+              case 10:
               case "end":
                 return _context.stop();
             }
