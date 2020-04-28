@@ -2940,6 +2940,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     tweet: {
@@ -2952,6 +2956,11 @@ __webpack_require__.r(__webpack_exports__);
       return this.tweet.media.data.filter(function (m) {
         return m.type === 'image';
       });
+    },
+    video: function video() {
+      return this.tweet.media.data.filter(function (m) {
+        return m.type === 'video';
+      })[0];
     }
   }
 });
@@ -50155,6 +50164,15 @@ var render = function() {
               }),
               0
             )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.video
+          ? _c("div", { staticClass: "mt-4 mb-4" }, [
+              _c("video", {
+                staticClass: "rounded-lg",
+                attrs: { src: _vm.video, controls: "" }
+              })
+            ])
           : _vm._e(),
         _vm._v(" "),
         _c("app-tweet-action-group", { attrs: { tweet: _vm.tweet } })
