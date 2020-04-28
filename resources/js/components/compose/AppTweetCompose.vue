@@ -85,6 +85,7 @@
                 this.form.media = []
                 this.form.video = null
                 this.media.images = []
+                this.media.progress = 0
             },
 
             handleUploadProgress (event) {
