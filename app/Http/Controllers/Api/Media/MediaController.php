@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Media\MediaStoreRequest;
 use App\Http\Resources\TweetMediaCollection;
 use App\TweetMedia;
-use Illuminate\Http\Request;
 
 class MediaController extends Controller
 {

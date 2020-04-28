@@ -66,8 +66,11 @@
 
         methods: {
             async submit () {
-                await this.uploadMedia()
-                // await axios.post('/api/tweets', this.form)
+                let media = await this.uploadMedia()
+
+                this.form.media = media.data.data.map(r => r.id)
+
+                await axios.post('/api/tweets', this.form)
 
                 this.form.body = ''
             },
