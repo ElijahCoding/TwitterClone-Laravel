@@ -10,7 +10,7 @@
             <app-dropdown-item @click.prevent="retweetOrUnretweet">
                 Retweet
             </app-dropdown-item>
-            <app-dropdown-item @click.prevent="$modal.show(AppTweetRetweetModal)">
+            <app-dropdown-item @click.prevent="$modal.show(AppTweetRetweetModal, { tweet })">
                 Retweet with comment
             </app-dropdown-item>
         </app-dropdown>
