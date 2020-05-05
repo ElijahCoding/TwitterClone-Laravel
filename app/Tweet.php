@@ -37,4 +37,9 @@ class Tweet extends Model
     {
         return $this->hasMany(TweetMedia::class);
     }
+
+    public function replies()
+    {
+        return $this->hasMany(Tweet::class, 'parent_id', 'id');
+    }
 }
