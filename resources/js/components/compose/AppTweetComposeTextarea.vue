@@ -15,7 +15,7 @@
                 required: false
             },
 
-            c: {
+            placeholder: {
                 required: false,
                 type: String
             }
