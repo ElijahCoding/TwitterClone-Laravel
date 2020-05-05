@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class TweetLikeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth:sanctum'])->only('store');
+    }
+
     public function store(Tweet $tweet, Request $request)
     {
         if ($request->user()->hasLiked($tweet)) {
