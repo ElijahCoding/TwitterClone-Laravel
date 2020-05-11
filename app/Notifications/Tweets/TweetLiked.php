@@ -4,11 +4,10 @@ namespace App\Notifications\Tweets;
 
 use App\Http\Resources\TweetResource;
 use App\Http\Resources\UserResource;
+use App\Notifications\DatabaseNotificationChannel;
 use App\Tweet;
 use App\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 class TweetLiked extends Notification
@@ -38,7 +37,9 @@ class TweetLiked extends Notification
      */
     public function via($notifiable)
     {
-        return ['database'];
+        return [
+            DatabaseNotificationChannel::class
+        ];
     }
 
     /**
