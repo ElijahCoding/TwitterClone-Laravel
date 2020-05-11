@@ -18,3 +18,5 @@ Route::post('/tweets/{tweet}/quotes', 'Api\Tweets\TweetQuoteController@store');
 
 Route::post('/media', 'Api\Media\MediaController@store');
 Route::get('/media/types', 'Api\Media\MediaTypesController@index');
+
+Route::get('/notifications', 'Api\Notifications\NotificationController@index');
