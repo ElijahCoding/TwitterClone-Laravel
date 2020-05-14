@@ -1,6 +1,8 @@
 <template>
     <div class="p-4">
-        {{ notification.id }}
+        <app-tweet
+            :tweet="notification.data.tweet"
+        />
     </div>
 </template>
 
