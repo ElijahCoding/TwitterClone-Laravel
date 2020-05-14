@@ -55,6 +55,10 @@ Echo.channel('tweets')
             id: e.id,
             count: e.count
         })
+        store.commit('notifications/SET_LIKES', {
+            id: e.id,
+            count: e.count
+        })
     })
     .listen('.TweetRetweetsWereUpdated', (e) => {
         if (e.user_id === User.id) {
@@ -65,9 +69,14 @@ Echo.channel('tweets')
             id: e.id,
             count: e.count
         })
+        store.commit('notifications/SET_RETWEETS', {
+            id: e.id,
+            count: e.count
+        })
     })
     .listen('.TweetWasDeleted', (e) => {
         store.commit('timeline/POP_TWEET', e.id)
+        store.commit('notifications/POP_TWEET', e.id)
     })
     .listen('.TweetRepliesWereUpdated', (e) => {
         store.commit('timeline/SET_REPLIES', e)

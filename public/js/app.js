@@ -64821,6 +64821,10 @@ Echo.channel('tweets').listen('.TweetLikesWereUpdated', function (e) {
     id: e.id,
     count: e.count
   });
+  store.commit('notifications/SET_LIKES', {
+    id: e.id,
+    count: e.count
+  });
 }).listen('.TweetRetweetsWereUpdated', function (e) {
   if (e.user_id === User.id) {
     store.dispatch('retweets/syncRetweet', e.id);
@@ -64830,8 +64834,13 @@ Echo.channel('tweets').listen('.TweetLikesWereUpdated', function (e) {
     id: e.id,
     count: e.count
   });
+  store.commit('notifications/SET_RETWEETS', {
+    id: e.id,
+    count: e.count
+  });
 }).listen('.TweetWasDeleted', function (e) {
   store.commit('timeline/POP_TWEET', e.id);
+  store.commit('notifications/POP_TWEET', e.id);
 }).listen('.TweetRepliesWereUpdated', function (e) {
   store.commit('timeline/SET_REPLIES', e);
 });
