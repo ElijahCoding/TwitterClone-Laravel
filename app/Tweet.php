@@ -4,10 +4,25 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use function foo\func;
 
 class Tweet extends Model
 {
     protected $guarded = [];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::created(function (Tweet $tweet) {
+            preg_match_all(
+                '/(?!\s)#([A-Za-z]\w*)\b/',
+                $tweet->body,
+                $matches,
+                PREG_OFFSET_CAPTURE
+            );
+        });
+    }
 
     public function scopeParent(Builder $builder)
     {
