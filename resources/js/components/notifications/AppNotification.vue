@@ -1,6 +1,9 @@
 <template>
-    <div class="text-gray-300 h-32">
-        {{ notification.id }}
+    <div class="flex w-full border-b border-gray-8000">
+        <component
+            :is="`AppNotification${notification.type}`"
+            :notification="notification"
+        />
     </div>
 </template>
 
