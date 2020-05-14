@@ -48,4 +48,9 @@ class Tweet extends Model
     {
         return $this->hasMany(Tweet::class, 'parent_id', 'id');
     }
+
+    public function entities()
+    {
+        return $this->hasMany(Entity::class);
+    }
 }
