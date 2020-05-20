@@ -19,7 +19,7 @@ class EntityExtractor
     {
         return $this->buildEntityCollection(
             $this->match(self::HASHTAG_REGEX),
-            'hashtag' // todo: extract class
+            EntityType::HASHTAG
         );
     }
 
@@ -27,7 +27,15 @@ class EntityExtractor
     {
         return $this->buildEntityCollection(
             $this->match(self::MENTION_REGEX),
-            'mention' // todo: extract class
+            EntityType::MENTION
+        );
+    }
+
+    public function getAllEntities()
+    {
+        return array_merge(
+            $this->getHashtagEntities(),
+            $this->getMentionEntities()
         );
     }
 
