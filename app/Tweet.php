@@ -17,7 +17,7 @@ class Tweet extends Model
 
         static::created(function (Tweet $tweet) {
             $tweet->entities()->createMany(
-                (new EntityExtractor($tweet->body))->getHashtagEntities()
+                (new EntityExtractor($tweet->body))->getMentionEntities()
             );
         });
     }

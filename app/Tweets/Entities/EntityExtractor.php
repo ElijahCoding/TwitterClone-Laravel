@@ -8,6 +8,8 @@ class EntityExtractor
 
     const HASHTAG_REGEX = '/(?!\s)#([A-Za-z]\w*)\b/';
 
+    const MENTION_REGEX = '/(?=[^\w!])@(\w+)\b/';
+
     public function __construct($string)
     {
         $this->string = $string;
@@ -18,6 +20,14 @@ class EntityExtractor
         return $this->buildEntityCollection(
             $this->match(self::HASHTAG_REGEX),
             'hashtag' // todo: extract class
+        );
+    }
+
+    public function getMentionEntities()
+    {
+        return $this->buildEntityCollection(
+            $this->match(self::MENTION_REGEX),
+            'mention' // todo: extract class
         );
     }
 
