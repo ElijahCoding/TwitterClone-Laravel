@@ -6,6 +6,7 @@ use App\Events\Tweets\TweetWasCreated;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Tweets\TweetStoreRequest;
 use App\Http\Resources\TweetCollection;
+use App\Http\Resources\TweetResource;
 use App\Notifications\Tweets\TweetMentionedIn;
 use App\Tweet;
 use App\TweetMedia;
@@ -33,6 +34,11 @@ class TweetController extends Controller
             'originalTweet.media.baseMedia',
         ])->find(explode(',', $request->ids));
         return new TweetCollection($tweets);
+    }
+
+    public function show(Tweet $tweet)
+    {
+        return new TweetCollection(collect([$tweet])->merge($tweet->parents()));
     }
 
     public function store(TweetStoreRequest $request)

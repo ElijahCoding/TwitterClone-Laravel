@@ -28,6 +28,8 @@ class Tweet extends Model
         return $builder->whereNull('parent_id');
     }
 
+
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -46,6 +48,23 @@ class Tweet extends Model
     public function retweets()
     {
         return $this->hasMany(Tweet::class, 'original_tweet_id');
+    }
+
+    public function parents()
+    {
+        $base = $this;
+        $parents = [];
+
+        while ($this->parentTweet) {
+            $parents[] = $base->parentTweet;
+            $base = $base->parentTweet;
+        }
+        return collect($parents);
+    }
+
+    public function parentTweet()
+    {
+        return $this->belongsTo(Tweet::class, 'parent_id', 'id');
     }
 
     public function retweetedTweet()
